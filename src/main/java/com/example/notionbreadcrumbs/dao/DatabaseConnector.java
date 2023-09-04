@@ -17,10 +17,11 @@ public class DatabaseConnector {
     @Value("${spring.datasource.password}")
     private String PASSWORD;
 
-    public static Connection getConnection() {
+    public Connection getConnection() {
         Connection connection = null;
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
+            // todo DataSource로 전환 필요
             connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();

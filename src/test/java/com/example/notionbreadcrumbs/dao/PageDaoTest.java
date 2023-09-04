@@ -5,13 +5,11 @@ import org.junit.jupiter.api.Test;
 
 import java.sql.SQLException;
 
-import static org.junit.jupiter.api.Assertions.*;
-
-class PageDaoTest {
+class TestDaoTest {
     @Test
     void addAndGet() throws SQLException, ClassNotFoundException {
-        PageDao pageDao = new PageDao();
+        TestDao testDao = new TestDao();
         Page page = new Page();
-        pageDao.add(page);
+        testDao.add(page);
     }
 }

@@ -29,12 +29,8 @@ public class PageService {
         }
 
         List<Breadcrumb> breadcrumbs = generateBreadcrumbs(page);
-        final PageInfo pageInfo = new PageInfo(page.getId(), page.getTitle(), page.getParentPageId(), breadcrumbs);
-
-        log.info("조회내용 : " + pageInfo.toString());
 
         StringBuilder sb = new StringBuilder();
-
         for (int i = 0; i < breadcrumbs.size(); i++) {
             sb.append(breadcrumbs.get(i).getPageId());
             if (i != breadcrumbs.size()-1) sb.append(" -> ");
@@ -49,6 +45,7 @@ public class PageService {
 
         while (page != null) {
             Breadcrumb breadcrumb = new Breadcrumb(page.getId(), page.getTitle());
+            // 같은 페이지 없다고 가정
             if (!breadcrumbs.isEmpty() && breadcrumbs.get(0).getPageId() == page.getId()) {
                 break;
             }

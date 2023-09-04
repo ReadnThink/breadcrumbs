@@ -8,7 +8,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class PageDao {
+public class TestDao {
     @Value("${spring.datasource.url}")
     private String URL;
     @Value("${spring.datasource.username}")
