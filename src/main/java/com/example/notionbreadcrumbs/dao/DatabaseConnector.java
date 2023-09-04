@@ -24,6 +24,7 @@ public class DatabaseConnector {
             // todo DataSource로 전환 필요
             connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
         } catch (ClassNotFoundException | SQLException e) {
+            System.out.println("에러 발생");
             e.printStackTrace();
         }
         return connection;
